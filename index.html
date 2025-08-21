@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSense - Intelligent Neurodegenerative Disease Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>NeuroSense</h1>
+                <span class="tagline">Intelligent Disease Detection</span>
+            </div>
+            <div class="navbar-menu">
+                <button id="nav-dashboard" class="nav-btn active">Dashboard</button>
+                <button id="nav-assessment" class="nav-btn">Risk Assessment</button>
+                <button id="nav-diagnosis" class="nav-btn">Clinical Diagnosis</button>
+                <button id="nav-tracking" class="nav-btn">Progression Tracking</button>
+                <button id="logout-btn" class="btn btn--outline btn--sm">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Authentication Section -->
+    <section id="auth-section" class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1>NeuroSense</h1>
+                    <p>Intelligent Platform for Neurodegenerative Disease Detection</p>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="login-form" class="auth-form">
+                    <h2>Sign In</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label class="form-label" for="login-email">Email</label>
+                            <input type="email" id="login-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="login-password">Password</label>
+                            <input type="password" id="login-password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
+                        <p class="auth-switch">Don't have an account? <a href="#" id="show-register">Create Account</a></p>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div id="register-form" class="auth-form hidden">
+                    <h2>Create Account</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label class="form-label" for="reg-name">Full Name</label>
+                            <input type="text" id="reg-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-age">Age</label>
+                            <input type="number" id="reg-age" class="form-control" min="18" max="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-email">Email</label>
+                            <input type="email" id="reg-email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-phone">Phone Number</label>
+                            <input type="tel" id="reg-phone" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-medical-id">Medical ID (Optional)</label>
+                            <input type="text" id="reg-medical-id" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-emergency">Emergency Contact</label>
+                            <input type="tel" id="reg-emergency" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="reg-password">Password</label>
+                            <input type="password" id="reg-password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                        <p class="auth-switch">Already have an account? <a href="#" id="show-login">Sign In</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Application -->
+    <main id="main-app" class="main-app hidden">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="section">
+            <div class="container">
+                <div class="welcome-header">
+                    <h1>Welcome to NeuroSense</h1>
+                    <p class="welcome-subtitle">Your intelligent platform for neurodegenerative disease detection, diagnosis, and monitoring</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card" id="card-assessment">
+                        <div class="feature-icon">📋</div>
+                        <h3>Risk Assessment</h3>
+                        <p>Complete a comprehensive questionnaire to evaluate your risk factors for neurodegenerative diseases including AD, PD, DLB, and FTD.</p>
+                        <button class="btn btn--primary">Start Assessment</button>
+                    </div>
+
+                    <div class="feature-card" id="card-diagnosis">
+                        <div class="feature-icon">🔬</div>
+                        <h3>Clinical Diagnosis</h3>
+                        <p>Upload your clinical test results, genetic data, and brain scans to receive AI-powered diagnosis and recommendations.</p>
+                        <button class="btn btn--primary">Upload Data</button>
+                    </div>
+
+                    <div class="feature-card" id="card-tracking">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progression Tracking</h3>
+                        <p>Monitor disease progression over time with comparative analysis and personalized insights from our AI system.</p>
+                        <button class="btn btn--primary">View Progress</button>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h2>About NeuroSense</h2>
+                    <p>NeuroSense combines advanced AI technology with clinical expertise to provide comprehensive support for neurodegenerative disease management. Our platform specializes in:</p>
+                    <ul class="disease-list">
+                        <li><strong>Alzheimer's Disease (AD)</strong> - Progressive memory and cognitive decline</li>
+                        <li><strong>Parkinson's Disease (PD)</strong> - Movement disorder affecting motor function</li>
+                        <li><strong>Dementia with Lewy Bodies (DLB)</strong> - Cognitive fluctuations and visual hallucinations</li>
+                        <li><strong>Frontotemporal Dementia (FTD)</strong> - Personality and language changes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Assessment Section -->
+        <section id="assessment-section" class="section hidden">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Risk Assessment Questionnaire</h1>
+                    <p>Please answer the following questions to evaluate your risk factors</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                        <span class="progress-text" id="progress-text">Question 1 of 12</span>
+                    </div>
+                </div>
+
+                <div class="questionnaire-container">
+                    <form id="assessment-form">
+                        <!-- Demographics Category -->
+                        <div class="question-category">
+                            <h3>Demographics</h3>
+                            <div class="form-group">
+                                <label class="form-label">What is your age?</label>
+                                <input type="number" name="age" class="form-control" min="18" max="120" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">What is your gender?</label>
+                                <select name="gender" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not">Prefer not to say</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Family History Category -->
+                        <div class="question-category">
+                            <h3>Family History</h3>
+                            <div class="form-group">
+                                <label class="form-label">Has anyone in your immediate family been diagnosed with dementia or Alzheimer's?</label>
+                                <select name="family_dementia" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                    <option value="unsure">Unsure</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Has anyone in your family been diagnosed with Parkinson's disease?</label>
+                                <select name="family_parkinson" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                    <option value="unsure">Unsure</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Lifestyle Category -->
+                        <div class="question-category">
+                            <h3>Lifestyle</h3>
+                            <div class="form-group">
+                                <label class="form-label">How often do you exercise per week?</label>
+                                <select name="exercise" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="never">Never</option>
+                                    <option value="1-2">1-2 times</option>
+                                    <option value="3-4">3-4 times</option>
+                                    <option value="5+">5+ times</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Do you currently smoke?</label>
+                                <select name="smoking" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="never">Never smoked</option>
+                                    <option value="former">Former smoker</option>
+                                    <option value="current">Current smoker</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Symptoms Category -->
+                        <div class="question-category">
+                            <h3>Symptoms</h3>
+                            <div class="form-group">
+                                <label class="form-label">Have you experienced memory problems that interfere with daily activities?</label>
+                                <select name="memory_issues" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="never">Never</option>
+                                    <option value="rarely">Rarely</option>
+                                    <option value="sometimes">Sometimes</option>
+                                    <option value="often">Often</option>
+                                    <option value="very-often">Very often</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Do you experience confusion about time, place, or people?</label>
+                                <select name="confusion" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="never">Never</option>
+                                    <option value="rarely">Rarely</option>
+                                    <option value="sometimes">Sometimes</option>
+                                    <option value="often">Often</option>
+                                    <option value="very-often">Very often</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Have you noticed tremor, stiffness, or slowness of movement?</label>
+                                <select name="movement_issues" class="form-control" required>
+                                    <option value="">Select...</option>
+                                    <option value="never">Never</option>
+                                    <option value="rarely">Rarely</option>
+                                    <option value="sometimes">Sometimes</option>
+                                    <option value="often">Often</option>
+                                    <option value="very-often">Very often</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary btn--lg">Generate Risk Assessment</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Assessment Results -->
+                <div id="assessment-results" class="assessment-results hidden">
+                    <h2>Your Risk Assessment Results</h2>
+                    <div class="risk-cards">
+                        <div class="risk-card" id="ad-risk">
+                            <h3>Alzheimer's Disease</h3>
+                            <div class="risk-score-container">
+                                <div class="risk-score" id="ad-score">0%</div>
+                                <div class="risk-level" id="ad-level">Low Risk</div>
+                            </div>
+                        </div>
+                        <div class="risk-card" id="pd-risk">
+                            <h3>Parkinson's Disease</h3>
+                            <div class="risk-score-container">
+                                <div class="risk-score" id="pd-score">0%</div>
+                                <div class="risk-level" id="pd-level">Low Risk</div>
+                            </div>
+                        </div>
+                        <div class="risk-card" id="dlb-risk">
+                            <h3>Dementia with Lewy Bodies</h3>
+                            <div class="risk-score-container">
+                                <div class="risk-score" id="dlb-score">0%</div>
+                                <div class="risk-level" id="dlb-level">Low Risk</div>
+                            </div>
+                        </div>
+                        <div class="risk-card" id="ftd-risk">
+                            <h3>Frontotemporal Dementia</h3>
+                            <div class="risk-score-container">
+                                <div class="risk-score" id="ftd-score">0%</div>
+                                <div class="risk-level" id="ftd-level">Low Risk</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommendations">
+                        <h3>Personalized Recommendations</h3>
+                        <div id="recommendations-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clinical Diagnosis Section -->
+        <section id="diagnosis-section" class="section hidden">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Clinical Data Upload & AI Diagnosis</h1>
+                    <p>Upload your clinical test results, genetic data, and brain scans for AI-powered analysis</p>
+                </div>
+
+                <div class="upload-container">
+                    <div class="upload-categories">
+                        <div class="upload-category">
+                            <h3>🧪 Clinical Test Results</h3>
+                            <p>Upload MMSE, MOCA, blood work, and other clinical assessments</p>
+                            <div class="file-upload">
+                                <input type="file" id="clinical-files" multiple accept=".pdf,.jpg,.jpeg,.png">
+                                <label for="clinical-files" class="btn btn--outline">Choose Files</label>
+                                <span class="file-info" id="clinical-info">No files selected</span>
+                            </div>
+                        </div>
+
+                        <div class="upload-category">
+                            <h3>🧬 Genetic Test Data</h3>
+                            <p>Upload genetic testing results including APOE genotyping</p>
+                            <div class="file-upload">
+                                <input type="file" id="genetic-files" multiple accept=".pdf,.csv,.txt">
+                                <label for="genetic-files" class="btn btn--outline">Choose Files</label>
+                                <span class="file-info" id="genetic-info">No files selected</span>
+                            </div>
+                        </div>
+
+                        <div class="upload-category">
+                            <h3>🧠 Brain Scans & Neuroimaging</h3>
+                            <p>Upload MRI, PET scans, and other neuroimaging data</p>
+                            <div class="file-upload">
+                                <input type="file" id="scan-files" multiple accept=".dcm,.jpg,.jpeg,.png">
+                                <label for="scan-files" class="btn btn--outline">Choose Files</label>
+                                <span class="file-info" id="scan-info">No files selected</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upload-actions">
+                        <button id="process-diagnosis" class="btn btn--primary btn--lg" disabled>Process AI Diagnosis</button>
+                    </div>
+                </div>
+
+                <!-- Processing State -->
+                <div id="processing-state" class="processing-state hidden">
+                    <div class="processing-animation">
+                        <div class="spinner"></div>
+                        <h3>Processing Your Data...</h3>
+                        <p>Our AI is analyzing your clinical data and generating a comprehensive diagnosis. This may take a few moments.</p>
+                        <div class="processing-steps">
+                            <div class="step active">Validating uploaded data</div>
+                            <div class="step">Analyzing clinical markers</div>
+                            <div class="step">Processing neuroimaging</div>
+                            <div class="step">Generating diagnosis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Diagnosis Results -->
+                <div id="diagnosis-results" class="diagnosis-results hidden">
+                    <h2>AI Diagnosis Results</h2>
+                    <div class="diagnosis-overview">
+                        <div class="primary-diagnosis">
+                            <h3>Primary Diagnosis</h3>
+                            <div class="diagnosis-card" id="primary-diagnosis-card">
+                                <h4 id="primary-diagnosis-name">Alzheimer's Disease</h4>
+                                <div class="confidence-score">
+                                    <span class="score" id="primary-score">78%</span>
+                                    <span class="label">Probability</span>
+                                </div>
+                                <div class="confidence-level" id="primary-confidence">High Confidence (85%)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="all-predictions">
+                        <h3>Detailed Disease Probabilities</h3>
+                        <div class="prediction-list" id="prediction-list"></div>
+                    </div>
+
+                    <div class="clinical-recommendations">
+                        <h3>Clinical Recommendations</h3>
+                        <div id="clinical-recommendations-list"></div>
+                    </div>
+
+                    <div class="explanation-section">
+                        <h3>AI Decision Explanation</h3>
+                        <p>Based on the analysis of your clinical data, biomarkers, and neuroimaging results, our AI system has identified patterns consistent with neurodegenerative disease. The diagnosis takes into account multiple factors including cognitive test scores, protein biomarkers, and structural brain changes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progression Tracking Section -->
+        <section id="tracking-section" class="section hidden">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Disease Progression Tracking</h1>
+                    <p>Monitor your health status over time and track disease progression</p>
+                </div>
+
+                <div class="tracking-overview">
+                    <div class="timeline-container">
+                        <h3>Your Health Timeline</h3>
+                        <div class="timeline" id="health-timeline">
+                            <!-- Timeline items will be populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="progression-charts">
+                        <h3>Cognitive Assessment Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="progression-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="new-upload-section">
+                    <h3>Upload New Test Results</h3>
+                    <div class="upload-form">
+                        <div class="form-group">
+                            <label class="form-label">Test Date</label>
+                            <input type="date" id="test-date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">MMSE Score</label>
+                            <input type="number" id="mmse-score" class="form-control" min="0" max="30">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">MOCA Score</label>
+                            <input type="number" id="moca-score" class="form-control" min="0" max="30">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Additional Notes</label>
+                            <textarea id="test-notes" class="form-control" rows="3"></textarea>
+                        </div>
+                        <button id="add-progression-data" class="btn btn--primary">Add to Timeline</button>
+                    </div>
+                </div>
+
+                <div class="follow-up-reminders">
+                    <h3>Upcoming Appointments & Reminders</h3>
+                    <div class="reminder-list">
+                        <div class="reminder-item">
+                            <div class="reminder-date">Aug 15, 2026</div>
+                            <div class="reminder-content">
+                                <h4>Follow-up Neuropsychological Testing</h4>
+                                <p>Scheduled cognitive assessment to monitor progression</p>
+                            </div>
+                        </div>
+                        <div class="reminder-item">
+                            <div class="reminder-date">Nov 15, 2025</div>
+                            <div class="reminder-content">
+                                <h4>Amyloid PET Scan</h4>
+                                <p>Recommended imaging study for diagnosis confirmation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Modal -->
+    <div id="loading-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <h3>Processing...</h3>
+            <p>Please wait while we process your request.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
